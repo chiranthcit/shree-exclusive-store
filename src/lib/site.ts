@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png.asset.json";
+import navLogo from "@/assets/nav-logo.png.asset.json";
 import menCard from "@/assets/men-card.png.asset.json";
 import womenCard from "@/assets/women-card.png.asset.json";
 import kidsCard from "@/assets/kids-card.png.asset.json";
