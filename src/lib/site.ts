@@ -21,6 +21,7 @@ import kNewborn from "@/assets/k-newborn.png.asset.json";
 import kCasual from "@/assets/k-casual.png.asset.json";
 
 export const logoUrl = logo.url;
+export const navLogoUrl = navLogo.url;
 
 export const store = {
   name: "Shree Exclusive Store",
