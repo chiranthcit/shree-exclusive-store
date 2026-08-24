@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png.asset.json";
+import navLogo from "@/assets/nav-logo.png.asset.json";
 import menCard from "@/assets/men-card.png.asset.json";
 import womenCard from "@/assets/women-card.png.asset.json";
 import kidsCard from "@/assets/kids-card.png.asset.json";
@@ -20,6 +21,7 @@ import kNewborn from "@/assets/k-newborn.png.asset.json";
 import kCasual from "@/assets/k-casual.png.asset.json";
 
 export const logoUrl = logo.url;
+export const navLogoUrl = navLogo.url;
 
 export const store = {
   name: "Shree Exclusive Store",
