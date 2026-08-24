@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { collections, store } from "@/lib/site";
@@ -81,14 +81,6 @@ function CollectionPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-                  <a
-                    href={store.maps}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-1.5 font-display text-[0.7rem] font-semibold tracking-[0.18em] text-primary uppercase"
-                  >
-                    Visit to Explore <ArrowUpRight className="h-4 w-4" />
-                  </a>
                 </div>
               </article>
             ))}
