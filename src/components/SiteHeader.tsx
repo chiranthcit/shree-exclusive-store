@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Instagram, Menu, MessageCircle, X } from "lucide-react";
-import { logoUrl, navLinks, store } from "@/lib/site";
+import { navLogoUrl, navLinks, store } from "@/lib/site";
 
 export function SiteHeader({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -25,9 +25,9 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={logoUrl}
+            src={navLogoUrl}
             alt="Shree Exclusive Store logo"
-            className="h-11 w-11 rounded-full object-cover ring-1 ring-border"
+            className="h-14 w-auto rounded-xl object-contain ring-1 ring-border shadow-sm"
           />
           <span className="leading-tight">
             <span className="block font-display text-lg font-bold tracking-[0.22em] text-foreground">
