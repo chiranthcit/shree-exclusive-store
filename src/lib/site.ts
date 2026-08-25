@@ -1,25 +1,4 @@
-import logo from "@/assets/logo.png.asset.json";
-import menCard from "@/assets/men-card.png.asset.json";
-import womenCard from "@/assets/women-card.png.asset.json";
-import kidsCard from "@/assets/kids-card.png.asset.json";
-import aboutStore from "@/assets/about-store.png.asset.json";
-import galStorefront from "@/assets/gal-storefront.png.asset.json";
-import galFestive from "@/assets/gal-festive.png.asset.json";
-import galInside from "@/assets/gal-inside.png.asset.json";
-import galCollection from "@/assets/gal-collection.png.asset.json";
-import wBras from "@/assets/w-bras.png.asset.json";
-import wPanties from "@/assets/w-panties.png.asset.json";
-import wChudidar from "@/assets/w-chudidar.png.asset.json";
-import wGowns from "@/assets/w-gowns.png.asset.json";
-import wPants from "@/assets/w-pants.png.asset.json";
-import mBriefs from "@/assets/m-briefs.png.asset.json";
-import mTrack from "@/assets/m-track.png.asset.json";
-import mTshirts from "@/assets/m-tshirts.png.asset.json";
-import kBriefs from "@/assets/k-briefs.png.asset.json";
-import kNewborn from "@/assets/k-newborn.png.asset.json";
-import kCasual from "@/assets/k-casual.png.asset.json";
-
-export const logoUrl = logo.url;
+export const logoUrl = "/logo.png";
 
 export const store = {
   name: "Shree Exclusive Store",
@@ -76,7 +55,7 @@ export const collections: Collection[] = [
   {
     slug: "men",
     eyebrow: "For Him",
-    card: menCard.url,
+    card: "/3-24.jpeg",
     title: "Men's Section",
     heading: "Men's Section",
     subheading: "The Modern Gentleman",
@@ -86,21 +65,21 @@ export const collections: Collection[] = [
         title: "Briefs",
         description:
           "Everyday briefs, trunks, and vests in breathable cotton from Jockey and Van Heusen.",
-        image: mBriefs.url,
+        image: "/6-24.png",
         brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "Track Pants",
         description:
           "Comfortable track pants and joggers for workouts, lounging, and everyday wear.",
-        image: mTrack.url,
+        image: "/tracks.jpeg",
         brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "T-Shirts",
         description:
           "Cotton t-shirts for everyday wear — crew necks, polos, and essential basics.",
-        image: mTshirts.url,
+        image: "/tshirts.jpeg",
         brands: ["Jockey", "Van Heusen"],
       },
     ],
@@ -108,7 +87,7 @@ export const collections: Collection[] = [
   {
     slug: "women",
     eyebrow: "For Her",
-    card: womenCard.url,
+    card: "/4-24.jpeg",
     title: "Women's Section",
     heading: "Women's Section",
     subheading: "The Feminine Essence",
@@ -118,34 +97,34 @@ export const collections: Collection[] = [
         title: "Bras",
         description:
           "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes, from Enamor, Amante and Nykd by Nykaa.",
-        image: wBras.url,
+        image: "/9-24.png",
         brands: ["Enamor", "Amante", "Nykd by Nykaa", "Zivame"],
       },
       {
         title: "Panties",
         description:
           "Comfortable panties in briefs, hipsters, and boyshorts — cotton-rich and seamless options.",
-        image: wPanties.url,
+        image: "/10-24.png",
         brands: ["Enamor", "Amante", "Jockey"],
       },
       {
         title: "Chudidar's",
         description: "Traditional chudidar sets and bottoms for elegant ethnic wear.",
-        image: wChudidar.url,
+        image: "/11-24.png",
         brands: ["Enamor", "Amante"],
       },
       {
         title: "Gowns",
         description:
           "Elegant nightgowns, nighties, and nightwear sets for comfortable, stylish evenings.",
-        image: wGowns.url,
+        image: "/12-24.png",
         brands: ["Nykd by Nykaa", "Enamor"],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
-        image: wPants.url,
+        image: "/13-24.png",
         brands: ["Jockey", "Van Heusen", "Nykd by Nykaa"],
       },
     ],
@@ -153,7 +132,7 @@ export const collections: Collection[] = [
   {
     slug: "kids",
     eyebrow: "For Kids",
-    card: kidsCard.url,
+    card: "/5-24.jpeg",
     title: "Kids Section",
     heading: "Kids Section",
     subheading: "The Little Ones",
@@ -163,34 +142,34 @@ export const collections: Collection[] = [
         title: "Briefs",
         description:
           "Gentle, stretchy briefs designed for a comfortable fit on growing kids.",
-        image: kBriefs.url,
+        image: "/14-24.png",
         brands: ["Jockey"],
       },
       {
         title: "New Born Accessories",
         description:
           "Soft, gentle clothing and essentials for newborns, plus handy accessories like socks, caps, and basics for little ones.",
-        image: kNewborn.url,
+        image: "/15-24.png",
         brands: ["Bonjour", "Jockey"],
       },
       {
         title: "Casual Wear",
         description:
           "Comfortable, stylish casual and party wear for everyday play and outings — tees, shorts, and easy-fit basics for active little ones.",
-        image: kCasual.url,
+        image: "/16-24.png",
         brands: ["Jockey", "Bonjour"],
       },
     ],
   },
 ];
 
-export const aboutImage = aboutStore.url;
+export const aboutImage = "/17-24.png";
 
 export const gallery = [
-  { label: "Storefront", image: galStorefront.url, span: true },
-  { label: "Inside the Store", image: galFestive.url, span: false },
-  { label: "Our Collection", image: galInside.url, span: false },
-  { label: "Store Entrance", image: galCollection.url, span: false },
+  { label: "Storefront", image: "/18-24.png", span: true },
+  { label: "Inside the Store", image: "/19-24.png", span: false },
+  { label: "Our Collection", image: "/20-24.png", span: false },
+  { label: "Store Entrance", image: "/21-24.png", span: false },
 ];
 
 export const reviews = [
