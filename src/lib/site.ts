@@ -58,6 +58,7 @@ export type CollectionItem = {
   title: string;
   description: string;
   image: string;
+  brands: string[];
 };
 
 export type Collection = {
@@ -86,18 +87,21 @@ export const collections: Collection[] = [
         description:
           "Everyday briefs, trunks, and vests in breathable cotton from Jockey and Van Heusen.",
         image: mBriefs.url,
+        brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "Track Pants",
         description:
           "Comfortable track pants and joggers for workouts, lounging, and everyday wear.",
         image: mTrack.url,
+        brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "T-Shirts",
         description:
           "Cotton t-shirts for everyday wear — crew necks, polos, and essential basics.",
         image: mTshirts.url,
+        brands: ["Jockey", "Van Heusen"],
       },
     ],
   },
@@ -115,29 +119,34 @@ export const collections: Collection[] = [
         description:
           "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes, from Enamor, Amante and Nykd by Nykaa.",
         image: wBras.url,
+        brands: ["Enamor", "Amante", "Nykd by Nykaa", "Zivame"],
       },
       {
         title: "Panties",
         description:
           "Comfortable panties in briefs, hipsters, and boyshorts — cotton-rich and seamless options.",
         image: wPanties.url,
+        brands: ["Enamor", "Amante", "Jockey"],
       },
       {
         title: "Chudidar's",
         description: "Traditional chudidar sets and bottoms for elegant ethnic wear.",
         image: wChudidar.url,
+        brands: ["Enamor", "Amante"],
       },
       {
         title: "Gowns",
         description:
           "Elegant nightgowns, nighties, and nightwear sets for comfortable, stylish evenings.",
         image: wGowns.url,
+        brands: ["Nykd by Nykaa", "Enamor"],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
         image: wPants.url,
+        brands: ["Jockey", "Van Heusen", "Nykd by Nykaa"],
       },
     ],
   },
@@ -155,18 +164,21 @@ export const collections: Collection[] = [
         description:
           "Gentle, stretchy briefs designed for a comfortable fit on growing kids.",
         image: kBriefs.url,
+        brands: ["Jockey"],
       },
       {
         title: "New Born Accessories",
         description:
           "Soft, gentle clothing and essentials for newborns, plus handy accessories like socks, caps, and basics for little ones.",
         image: kNewborn.url,
+        brands: ["Bonjour", "Jockey"],
       },
       {
         title: "Casual Wear",
         description:
           "Comfortable, stylish casual and party wear for everyday play and outings — tees, shorts, and easy-fit basics for active little ones.",
         image: kCasual.url,
+        brands: ["Jockey", "Bonjour"],
       },
     ],
   },
