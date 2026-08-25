@@ -1,8 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, Check, MapPin, MessageCircle } from "lucide-react";
+import { ArrowLeft, Check, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Button } from "@/components/ui/button";
 import { collections, store } from "@/lib/site";
 
 export const Route = createFileRoute("/collections/$slug")({
@@ -97,16 +96,6 @@ function CollectionPage() {
                       </li>
                     ))}
                   </ul>
-
-                  <Button
-                    asChild
-                    size="lg"
-                    className="mt-8 rounded-full font-display text-xs tracking-[0.16em] uppercase"
-                  >
-                    <a href={store.maps} target="_blank" rel="noreferrer">
-                      <MapPin /> Visit to Explore
-                    </a>
-                  </Button>
                 </div>
               </section>
             ))}
