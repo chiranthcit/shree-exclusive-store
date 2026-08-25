@@ -176,9 +176,9 @@ export const aboutImage = aboutStore.url;
 
 export const gallery = [
   { label: "Storefront", image: galStorefront.url, span: true },
-  { label: "Festive Display", image: galFestive.url, span: false },
-  { label: "Inside the Store", image: galInside.url, span: false },
-  { label: "Our Collection", image: galCollection.url, span: false },
+  { label: "Inside the Store", image: galFestive.url, span: false },
+  { label: "Our Collection", image: galInside.url, span: false },
+  { label: "Store Entrance", image: galCollection.url, span: false },
 ];
 
 export const reviews = [
