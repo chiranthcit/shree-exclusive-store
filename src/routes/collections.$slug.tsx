@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MessageCircle, X } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Button } from "@/components/ui/button";
 import { collections, store } from "@/lib/site";
 
 export const Route = createFileRoute("/collections/$slug")({
@@ -33,6 +35,32 @@ export const Route = createFileRoute("/collections/$slug")({
 
 function CollectionPage() {
   const collection = Route.useLoaderData();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveIndex(null);
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((current) =>
+          current === null ? null : (current - 1 + collection.items.length) % collection.items.length,
+        );
+      }
+      if (event.key === "ArrowRight") {
+        setActiveIndex((current) =>
+          current === null ? null : (current + 1) % collection.items.length,
+        );
+      }
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeIndex, collection.items.length]);
+
+  const activeItem = activeIndex === null ? undefined : collection.items[activeIndex];
 
   return (
     <div className="min-h-screen bg-background">
@@ -81,12 +109,88 @@ function CollectionPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                  <Button
+                    type="button"
+                    onClick={() => setActiveIndex(collection.items.indexOf(item))}
+                    className="mt-5 w-full rounded-full font-display text-xs tracking-[0.16em] uppercase"
+                  >
+                    <Camera /> View Pictures
+                  </Button>
                 </div>
               </article>
             ))}
           </div>
         </div>
       </main>
+
+      {activeItem && activeIndex !== null ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeItem.title} picture viewer`}
+          className="fixed inset-0 z-[70] grid place-items-center bg-foreground/90 p-4 backdrop-blur-sm"
+          onClick={() => setActiveIndex(null)}
+        >
+          <div
+            className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-card shadow-2xl md:flex-row"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="relative flex min-h-[20rem] flex-1 items-center justify-center bg-foreground/5 md:min-h-[38rem]">
+              <img
+                src={activeItem.image}
+                alt={`${activeItem.title} at Shree Exclusive Store`}
+                className="max-h-[70vh] w-full object-contain"
+              />
+              {collection.items.length > 1 ? (
+                <>
+                  <Button
+                    type="button"
+                    size="icon"
+                    variant="secondary"
+                    aria-label="Previous picture"
+                    onClick={() =>
+                      setActiveIndex((activeIndex - 1 + collection.items.length) % collection.items.length)
+                    }
+                    className="absolute left-3 rounded-full shadow-lg"
+                  >
+                    <ChevronLeft />
+                  </Button>
+                  <Button
+                    type="button"
+                    size="icon"
+                    variant="secondary"
+                    aria-label="Next picture"
+                    onClick={() => setActiveIndex((activeIndex + 1) % collection.items.length)}
+                    className="absolute right-3 rounded-full shadow-lg"
+                  >
+                    <ChevronRight />
+                  </Button>
+                </>
+              ) : null}
+            </div>
+            <div className="w-full p-6 md:w-72 md:p-8">
+              <p className="font-display text-[0.65rem] font-semibold tracking-[0.2em] text-primary uppercase">
+                {collection.eyebrow}
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-bold text-foreground">{activeItem.title}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{activeItem.description}</p>
+              <p className="mt-6 text-xs text-muted-foreground">
+                {activeIndex + 1} / {collection.items.length}
+              </p>
+            </div>
+            <Button
+              type="button"
+              size="icon"
+              variant="secondary"
+              aria-label="Close picture viewer"
+              onClick={() => setActiveIndex(null)}
+              className="absolute top-3 right-3 rounded-full shadow-lg"
+            >
+              <X />
+            </Button>
+          </div>
+        </div>
+      ) : null}
 
       <SiteFooter />
 
