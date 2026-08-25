@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowLeft, Camera, ChevronLeft, ChevronRight, MessageCircle, X } from "lucide-react";
+import { ArrowLeft, Check, MapPin, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
@@ -35,32 +34,6 @@ export const Route = createFileRoute("/collections/$slug")({
 
 function CollectionPage() {
   const collection = Route.useLoaderData();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (activeIndex === null) return;
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActiveIndex(null);
-      if (event.key === "ArrowLeft") {
-        setActiveIndex((current) =>
-          current === null ? null : (current - 1 + collection.items.length) % collection.items.length,
-        );
-      }
-      if (event.key === "ArrowRight") {
-        setActiveIndex((current) =>
-          current === null ? null : (current + 1) % collection.items.length,
-        );
-      }
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [activeIndex, collection.items.length]);
-
-  const activeItem = activeIndex === null ? undefined : collection.items[activeIndex];
 
   return (
     <div className="min-h-screen bg-background">
@@ -85,112 +58,61 @@ function CollectionPage() {
             available at our store.
           </p>
 
-          <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {collection.items.map((item) => (
-              <article
+          <div className="mt-14 space-y-16">
+            {collection.items.map((item, index) => (
+              <section
                 key={item.title}
-                className="group overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-shadow hover:shadow-xl"
+                className="grid items-center gap-8 rounded-3xl border border-border bg-card/70 p-5 shadow-sm md:grid-cols-2 md:p-8"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div
+                  className={`overflow-hidden rounded-2xl ${index % 2 === 1 ? "md:order-2" : ""}`}
+                >
                   <img
                     src={item.image}
                     alt={`${item.title} at Shree Exclusive Store`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="aspect-[4/3] h-full w-full object-cover"
                   />
-                  <span className="absolute top-4 left-4 rounded-full bg-card/90 px-3 py-1.5 font-display text-[0.6rem] font-semibold tracking-[0.2em] text-foreground uppercase">
+                </div>
+
+                <div>
+                  <span className="inline-block rounded-full bg-secondary px-4 py-1.5 font-display text-[0.6rem] font-semibold tracking-[0.2em] text-secondary-foreground uppercase">
                     {collection.eyebrow}
                   </span>
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent p-5">
-                    <h2 className="font-display text-2xl font-bold text-primary-foreground">
-                      {item.title}
-                    </h2>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                  <h2 className="section-title mt-5 text-3xl md:text-5xl">{item.title}</h2>
+                  <p className="mt-4 max-w-lg leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+
+                  <p className="mt-7 font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary uppercase">
+                    Brands Available
+                  </p>
+                  <ul className="mt-3 grid max-w-md gap-3 sm:grid-cols-2">
+                    {item.brands.map((brand) => (
+                      <li key={brand} className="flex items-center gap-3">
+                        <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+                          <Check className="h-3.5 w-3.5" />
+                        </span>
+                        <span className="text-foreground">{brand}</span>
+                      </li>
+                    ))}
+                  </ul>
+
                   <Button
-                    type="button"
-                    onClick={() => setActiveIndex(collection.items.indexOf(item))}
-                    className="mt-5 w-full rounded-full font-display text-xs tracking-[0.16em] uppercase"
+                    asChild
+                    size="lg"
+                    className="mt-8 rounded-full font-display text-xs tracking-[0.16em] uppercase"
                   >
-                    <Camera /> View Pictures
+                    <a href={store.maps} target="_blank" rel="noreferrer">
+                      <MapPin /> Visit to Explore
+                    </a>
                   </Button>
                 </div>
-              </article>
+              </section>
             ))}
           </div>
         </div>
       </main>
-
-      {activeItem && activeIndex !== null ? (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${activeItem.title} picture viewer`}
-          className="fixed inset-0 z-[70] grid place-items-center bg-foreground/90 p-4 backdrop-blur-sm"
-          onClick={() => setActiveIndex(null)}
-        >
-          <div
-            className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-card shadow-2xl md:flex-row"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <div className="relative flex min-h-[20rem] flex-1 items-center justify-center bg-foreground/5 md:min-h-[38rem]">
-              <img
-                src={activeItem.image}
-                alt={`${activeItem.title} at Shree Exclusive Store`}
-                className="max-h-[70vh] w-full object-contain"
-              />
-              {collection.items.length > 1 ? (
-                <>
-                  <Button
-                    type="button"
-                    size="icon"
-                    variant="secondary"
-                    aria-label="Previous picture"
-                    onClick={() =>
-                      setActiveIndex((activeIndex - 1 + collection.items.length) % collection.items.length)
-                    }
-                    className="absolute left-3 rounded-full shadow-lg"
-                  >
-                    <ChevronLeft />
-                  </Button>
-                  <Button
-                    type="button"
-                    size="icon"
-                    variant="secondary"
-                    aria-label="Next picture"
-                    onClick={() => setActiveIndex((activeIndex + 1) % collection.items.length)}
-                    className="absolute right-3 rounded-full shadow-lg"
-                  >
-                    <ChevronRight />
-                  </Button>
-                </>
-              ) : null}
-            </div>
-            <div className="w-full p-6 md:w-72 md:p-8">
-              <p className="font-display text-[0.65rem] font-semibold tracking-[0.2em] text-primary uppercase">
-                {collection.eyebrow}
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-bold text-foreground">{activeItem.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{activeItem.description}</p>
-              <p className="mt-6 text-xs text-muted-foreground">
-                {activeIndex + 1} / {collection.items.length}
-              </p>
-            </div>
-            <Button
-              type="button"
-              size="icon"
-              variant="secondary"
-              aria-label="Close picture viewer"
-              onClick={() => setActiveIndex(null)}
-              className="absolute top-3 right-3 rounded-full shadow-lg"
-            >
-              <X />
-            </Button>
-          </div>
-        </div>
-      ) : null}
 
       <SiteFooter />
 
