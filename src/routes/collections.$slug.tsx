@@ -58,20 +58,34 @@ function CollectionPage() {
           </p>
 
           <div className="mt-14 space-y-16">
-            {collection.items.map((item, index) => (
+            {collection.items.map((item, index) => {
+              const shots = item.images ?? (item.image ? [item.image] : [""]);
+              return (
               <section
                 key={item.title}
                 className="grid items-center gap-8 rounded-3xl border border-border bg-card/70 p-5 shadow-sm md:grid-cols-2 md:p-8"
               >
-                <div
-                  className={`overflow-hidden rounded-2xl ${index % 2 === 1 ? "md:order-2" : ""}`}
-                >
-                  <img
-                    src={item.image}
-                    alt={`${item.title} at Shree Exclusive Store`}
-                    loading="lazy"
-                    className="aspect-[4/3] h-full w-full object-cover"
-                  />
+                <div className={index % 2 === 1 ? "md:order-2" : ""}>
+                  <div className={shots.length > 1 ? "grid grid-cols-3 gap-3" : ""}>
+                    {shots.map((src, i) =>
+                      src ? (
+                        <img
+                          key={i}
+                          src={src}
+                          alt={`${item.title} at Shree Exclusive Store`}
+                          loading="lazy"
+                          className="aspect-[4/3] h-full w-full rounded-2xl object-cover"
+                        />
+                      ) : (
+                        <div
+                          key={i}
+                          className="grid aspect-[4/3] w-full place-items-center rounded-2xl border border-dashed border-border bg-secondary/40 text-center font-display text-[0.6rem] font-semibold tracking-[0.2em] text-muted-foreground uppercase"
+                        >
+                          Photo coming soon
+                        </div>
+                      ),
+                    )}
+                  </div>
                 </div>
 
                 <div>
@@ -83,22 +97,28 @@ function CollectionPage() {
                     {item.description}
                   </p>
 
-                  <p className="mt-7 font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary uppercase">
-                    Brands Available
-                  </p>
-                  <ul className="mt-3 grid max-w-md gap-3 sm:grid-cols-2">
-                    {item.brands.map((brand) => (
-                      <li key={brand} className="flex items-center gap-3">
-                        <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
-                          <Check className="h-3.5 w-3.5" />
-                        </span>
-                        <span className="text-foreground">{brand}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {item.brands?.length ? (
+                    <>
+                      <p className="mt-7 font-display text-[0.7rem] font-semibold tracking-[0.2em] text-primary uppercase">
+                        Brands Available
+                      </p>
+                      <ul className="mt-3 grid max-w-md gap-3 sm:grid-cols-2">
+                        {item.brands.map((brand) => (
+                          <li key={brand} className="flex items-center gap-3">
+                            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
+                              <Check className="h-3.5 w-3.5" />
+                            </span>
+                            <span className="text-foreground">{brand}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : null}
                 </div>
               </section>
-            ))}
+              );
+            })}
+
           </div>
         </div>
       </main>

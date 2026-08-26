@@ -76,7 +76,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               {[
                 ["500+", "Designs"],
-                ["6+", "Brands"],
+                ["14+", "Brands"],
                 ["50,000+", "Products"],
               ].map(([n, l]) => (
                 <div key={l} className="border-l border-border pl-4 first:border-0 first:pl-0">
@@ -111,7 +111,7 @@ function Home() {
       <section id="collections" className="py-24">
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="section-title text-center text-3xl md:text-5xl">Our Collections</h2>
-          <div className="mt-14 grid gap-8 md:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {collections.map((c) => (
               <article
                 key={c.slug}
