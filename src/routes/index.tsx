@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -10,11 +11,10 @@ import {
   MessageCircle,
   Navigation,
   Phone,
-  Star,
 } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { aboutImage, brands, collections, gallery, logoUrl, reviews, store } from "@/lib/site";
+import { aboutImage, brands, collections, gallery, logoUrl, store } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +39,14 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  useEffect(() => {
+    if (document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader home />
@@ -60,13 +68,13 @@ function Home() {
               Trendy fashion, quality clothing, and exclusive styles — all under one roof.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <a
+              
                 href="#collections"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase transition-transform hover:scale-[1.03]"
               >
                 Explore Collections <ArrowRight className="h-4 w-4" />
               </a>
-              <a
+              
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary uppercase transition-colors hover:bg-accent"
               >
@@ -246,40 +254,11 @@ function Home() {
           <p className="mt-4 text-center text-muted-foreground">
             Real reviews from our happy shoppers.
           </p>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <article key={r.name} className="rounded-3xl border border-border bg-card p-7 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-tr from-rose to-primary font-display text-lg font-bold text-primary-foreground">
-                    {r.initial}
-                  </span>
-                  <div>
-                    <p className="flex items-center gap-2 font-semibold text-foreground">
-                      {r.name}
-                      {r.isNew ? (
-                        <span className="rounded-full bg-accent px-2 py-0.5 text-[0.6rem] font-bold tracking-widest text-accent-foreground uppercase">
-                          New
-                        </span>
-                      ) : null}
-                    </p>
-                    <p className="text-xs text-muted-foreground">{r.when}</p>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="mt-4 leading-relaxed text-muted-foreground">{r.text}</p>
-                <div className="mt-5 border-l-2 border-border pl-4">
-                  <p className="font-display text-[0.6rem] font-semibold tracking-[0.2em] text-primary uppercase">
-                    Shree Exclusive Store (Owner)
-                  </p>
-                  <p className="text-xs text-muted-foreground">{r.replyWhen}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{r.reply}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mt-14">
+            <div
+              className="elfsight-app-266e7294-776b-4cb8-9506-8b3ed97a6a19"
+              data-elfsight-app-lazy
+            ></div>
           </div>
         </div>
       </section>
@@ -305,7 +284,7 @@ function Home() {
                 <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                   {store.address}
                 </p>
-                <a
+                
                   href={store.maps}
                   target="_blank"
                   rel="noreferrer"
@@ -329,7 +308,7 @@ function Home() {
                 <span className="font-display text-[0.65rem] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
                   Follow Us
                 </span>
-                <a
+                
                   href={store.instagram}
                   target="_blank"
                   rel="noreferrer"
@@ -338,7 +317,7 @@ function Home() {
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a
+                
                   href={store.whatsapp}
                   target="_blank"
                   rel="noreferrer"
@@ -355,7 +334,7 @@ function Home() {
 
       <SiteFooter home />
 
-      <a
+      
         href={store.whatsapp}
         target="_blank"
         rel="noreferrer"
