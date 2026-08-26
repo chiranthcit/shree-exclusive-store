@@ -147,7 +147,7 @@ export const collections: Collection[] = [
         title: "Cord Sets",
         description:
           "Coordinated top-and-bottom cord sets in soft fabrics — easy, put-together everyday style.",
-        images: ["", "", "", ""],
+        images: ["/cord set-1.jpeg", "/cord set-2.jpeg", "/cord set-3.jpeg", "/cord set-4.jpeg"],
       },
       {
         title: "Night Suits",
@@ -163,7 +163,7 @@ export const collections: Collection[] = [
       {
         title: "T-Shirts",
         description: "Everyday t-shirts in soft cotton — casual fits and easy basics.",
-        images: ["", ""],
+        images: ["/womens t-shirts -1.jpeg", "/womens t-shirts-2.jpeg"],
       },
       {
   title: "Gym Wear",
