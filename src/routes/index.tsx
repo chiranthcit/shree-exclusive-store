@@ -224,7 +224,12 @@ function Home() {
           <h2 className="section-title text-center text-3xl md:text-5xl">The Gallery</h2>
           <div className="mt-14 grid gap-5 md:grid-cols-2 items-start">
             {gallery.map((g) => (
-             <figure key={g.label} className="group relative overflow-hidden rounded-3xl">
+             <figure
+  key={g.label}
+  className={`group relative overflow-hidden rounded-3xl ${
+    g.label === "Store Highlight" ? "-mt-10 md:-mt-16" : ""
+  }`}
+>
                 <img
                   src={g.image}
                   alt={g.label}
