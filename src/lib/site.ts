@@ -74,24 +74,27 @@ export const collections: Collection[] = [
     title: "Men's Section",
     heading: "Men's Section",
     subheading: "The Modern Gentleman",
-    tags: ["Briefs", "Track Pants", "T-Shirts"],
+    tags: ["Briefs", "Vests", "T-Shirts & Track Pants"],
     items: [
       {
         title: "Briefs",
         description:
-          "Everyday briefs, trunks, and vests in breathable cotton from Jockey and Van Heusen.",
+          "Everyday briefs and trunks in breathable cotton from Jockey and Van Heusen.",
+        images: [mBriefs.url],
         brands: ["Jockey", "Van Heusen"],
       },
       {
-        title: "Track Pants",
+        title: "Vests",
         description:
-          "Comfortable track pants and joggers for workouts, lounging, and everyday wear.",
-        brands: ["Jockey", "Van Heusen"],
+          "Classic cotton vests — sleeveless and sleeved styles for everyday comfort.",
+        images: [mVests.url],
+        brands: ["Jockey"],
       },
       {
-        title: "T-Shirts",
+        title: "T-Shirts & Track Pants",
         description:
-          "Cotton t-shirts for everyday wear — crew necks, polos, and essential basics.",
+          "Cotton t-shirts, polos, joggers, and track pants for everyday wear, workouts, and lounging.",
+        images: [mTshirts.url, mTracks.url],
         brands: ["Jockey", "Van Heusen"],
       },
     ],
