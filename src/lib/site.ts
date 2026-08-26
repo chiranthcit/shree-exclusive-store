@@ -199,7 +199,7 @@ export const collections: Collection[] = [
     title: "New Born Accessories",
     heading: "New Born Accessories",
     subheading: "The Tiniest Essentials",
-    tags: ["Caps & Mittens", "Socks", "Baby Basics"],
+    tags: [],
     items: [],
   },
 ];
