@@ -1,4 +1,14 @@
 import newbornCard from "@/assets/newborn-card.jpg";
+import mVests from "@/assets/jocket_vests_men.jpeg.asset.json";
+import mBriefs from "@/assets/jockey_briefs_men.jpeg.asset.json";
+import mTracks from "@/assets/tracks-2.jpeg.asset.json";
+import mTshirts from "@/assets/tshirts-2.jpeg.asset.json";
+import wBrasAmante from "@/assets/bras_amante.jpeg.asset.json";
+import wBrasEnamor from "@/assets/bras_enamore.jpeg.asset.json";
+import wBras4 from "@/assets/bras-4th.jpeg.asset.json";
+import wBrasNykd from "@/assets/nykd_by_nyka_womens.webp.asset.json";
+import wPanties from "@/assets/briefs_women.jpeg.asset.json";
+import wPants from "@/assets/womens_pants_-1.jpeg.asset.json";
 
 export const logoUrl = "/logo.png";
 
