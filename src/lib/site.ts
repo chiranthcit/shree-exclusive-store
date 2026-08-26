@@ -1,14 +1,4 @@
 import newbornCard from "@/assets/newborn-card.jpg";
-import mVests from "@/assets/jocket_vests_men.jpeg.asset.json";
-import mBriefs from "@/assets/jockey_briefs_men.jpeg.asset.json";
-import mTracks from "@/assets/tracks-2.jpeg.asset.json";
-import mTshirts from "@/assets/tshirts-2.jpeg.asset.json";
-import wBrasAmante from "@/assets/bras_amante.jpeg.asset.json";
-import wBrasEnamor from "@/assets/bras_enamore.jpeg.asset.json";
-import wBras4 from "@/assets/bras-4th.jpeg.asset.json";
-import wBrasNykd from "@/assets/nykd_by_nyka_womens.webp.asset.json";
-import wPanties from "@/assets/briefs_women.jpeg.asset.json";
-import wPants from "@/assets/womens_pants_-1.jpeg.asset.json";
 
 export const logoUrl = "/logo.png";
 
@@ -80,21 +70,21 @@ export const collections: Collection[] = [
         title: "Briefs",
         description:
           "Everyday briefs and trunks in breathable cotton from Jockey and Van Heusen.",
-        images: [mBriefs.url],
+        images: ["/jockey briefs men.jpeg"],
         brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "Vests",
         description:
           "Classic cotton vests — sleeveless and sleeved styles for everyday comfort.",
-        images: [mVests.url],
+        images: ["/jocket vests men.jpeg"],
         brands: ["Jockey"],
       },
       {
         title: "T-Shirts & Track Pants",
         description:
           "Cotton t-shirts, polos, joggers, and track pants for everyday wear, workouts, and lounging.",
-        images: [mTshirts.url, mTracks.url],
+        images: ["/tshirts.jpeg", "/tracks main jockey.jpeg"],
         brands: ["Jockey", "Van Heusen"],
       },
     ],
@@ -122,14 +112,19 @@ export const collections: Collection[] = [
         title: "Bras",
         description:
           "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes.",
-        images: [wBrasAmante.url, wBrasEnamor.url, wBrasNykd.url, wBras4.url],
+        images: [
+          "/bras amante.jpeg",
+          "/bras enamore.jpeg",
+          "/nykd by nyka womens.webp",
+          "/bras-4th.jpeg",
+        ],
         brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Amante", "Zivame"],
       },
       {
         title: "Panties",
         description:
           "A wide choice of patterns, prints, and colours across every size — from everyday cotton to lace and seamless styles.",
-        images: [wPanties.url],
+        images: ["/briefs womens.jpg"],
       },
       {
         title: "Chudidar's",
@@ -138,15 +133,14 @@ export const collections: Collection[] = [
       },
       {
         title: "Gowns",
-        description:
-          "Ethnic gowns for different purposes with many designs available.",
-        images: ["", "", "", ""],
+        description: "Ethnic gowns for different purposes with many designs available.",
+        images: ["/gown-1.webp", "/gown 2.webp", "/gown 3.webp", "/gown 4.webp"],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
-        images: [wPants.url, ""],
+        images: ["/womens pants -1.jpeg", "/womens pants -2.jpeg"],
       },
       {
         title: "Cord Sets",
@@ -156,20 +150,18 @@ export const collections: Collection[] = [
       },
       {
         title: "Night Suits",
-        description:
-          "Different styles, designs, and colours available in nighty's.",
-        images: ["", ""],
+        description: "Different styles, designs, and colours available in nighty's.",
+        images: ["/night suits-1.jpeg", "/night suits-2.jpeg"],
       },
       {
         title: "Bedroom Wear",
         description:
           "Relaxed bedroom wear made for lounging at home — soft, breathable, and easy to wear.",
-        images: ["", ""],
+        images: ["/bedroom wear 1.jpeg", "/bedroom wear 2.jpeg"],
       },
       {
         title: "T-Shirts",
-        description:
-          "Everyday t-shirts in soft cotton — casual fits and easy basics.",
+        description: "Everyday t-shirts in soft cotton — casual fits and easy basics.",
         images: ["", ""],
       },
     ],
@@ -213,7 +205,6 @@ export const collections: Collection[] = [
 ];
 
 export const aboutImage = "/17-24.png";
-
 
 export const gallery = [
   { label: "Storefront", image: "/18-24.png", span: true },
