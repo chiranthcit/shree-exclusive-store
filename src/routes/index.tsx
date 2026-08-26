@@ -222,7 +222,7 @@ function Home() {
       <section id="gallery" className="py-24">
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="section-title text-center text-3xl md:text-5xl">The Gallery</h2>
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
+          <div className="mt-14 grid gap-5 md:grid-cols-2 items-start">
             {gallery.map((g) => (
              <figure key={g.label} className="group relative overflow-hidden rounded-3xl">
                 <img
