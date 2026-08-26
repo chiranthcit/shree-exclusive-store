@@ -68,13 +68,13 @@ function Home() {
               Trendy fashion, quality clothing, and exclusive styles — all under one roof.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <a
+              
                 href="#collections"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase transition-transform hover:scale-[1.03]"
               >
                 Explore Collections <ArrowRight className="h-4 w-4" />
               </a>
-              <a
+              
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary uppercase transition-colors hover:bg-accent"
               >
@@ -222,25 +222,41 @@ function Home() {
       <section id="gallery" className="py-24">
         <div className="mx-auto max-w-7xl px-5">
           <h2 className="section-title text-center text-3xl md:text-5xl">The Gallery</h2>
-          <div className="mt-14 grid gap-5 md:grid-cols-2 items-start">
-            {gallery.map((g) => (
-             <figure
-  key={g.label}
-  className={`group relative overflow-hidden rounded-3xl ${
-    g.label === "Store Highlight" ? "-mt-10 md:-mt-16" : ""
-  }`}
->
-                <img
-                  src={g.image}
-                  alt={g.label}
-                  loading="lazy"
-                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"                
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent p-5 font-display text-xs font-semibold tracking-[0.22em] text-primary-foreground uppercase">
-                  {g.label}
-                </figcaption>
-              </figure>
-            ))}
+          <div className="mt-14 grid grid-cols-2 gap-5">
+            <div className="flex flex-col gap-5">
+              {gallery
+                .filter((_, i) => i % 2 === 0)
+                .map((g) => (
+                  <figure key={g.label} className="group relative overflow-hidden rounded-3xl">
+                    <img
+                      src={g.image}
+                      alt={g.label}
+                      loading="lazy"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent p-5 font-display text-xs font-semibold tracking-[0.22em] text-primary-foreground uppercase">
+                      {g.label}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
+            <div className="flex flex-col gap-5">
+              {gallery
+                .filter((_, i) => i % 2 === 1)
+                .map((g) => (
+                  <figure key={g.label} className="group relative overflow-hidden rounded-3xl">
+                    <img
+                      src={g.image}
+                      alt={g.label}
+                      loading="lazy"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent p-5 font-display text-xs font-semibold tracking-[0.22em] text-primary-foreground uppercase">
+                      {g.label}
+                    </figcaption>
+                  </figure>
+                ))}
+            </div>
           </div>
         </div>
       </section>
@@ -282,7 +298,7 @@ function Home() {
                 <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                   {store.address}
                 </p>
-                <a
+                
                   href={store.maps}
                   target="_blank"
                   rel="noreferrer"
@@ -306,7 +322,7 @@ function Home() {
                 <span className="font-display text-[0.65rem] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
                   Follow Us
                 </span>
-                <a
+                
                   href={store.instagram}
                   target="_blank"
                   rel="noreferrer"
@@ -315,7 +331,7 @@ function Home() {
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a
+                
                   href={store.whatsapp}
                   target="_blank"
                   rel="noreferrer"
@@ -332,7 +348,7 @@ function Home() {
 
       <SiteFooter home />
 
-      <a
+      
         href={store.whatsapp}
         target="_blank"
         rel="noreferrer"
