@@ -224,19 +224,12 @@ function Home() {
           <h2 className="section-title text-center text-3xl md:text-5xl">The Gallery</h2>
           <div className="mt-14 grid gap-5 md:grid-cols-2">
             {gallery.map((g) => (
-              <figure
-                key={g.label}
-                className={`group relative overflow-hidden rounded-3xl ${
-                  g.span ? "md:row-span-2" : ""
-                }`}
-              >
+             <figure key={g.label} className="group relative overflow-hidden rounded-3xl">
                 <img
                   src={g.image}
                   alt={g.label}
                   loading="lazy"
-                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-                    g.span ? "h-full min-h-[22rem]" : "h-64"
-                  }`}
+                  className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"                
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/80 to-transparent p-5 font-display text-xs font-semibold tracking-[0.22em] text-primary-foreground uppercase">
                   {g.label}
