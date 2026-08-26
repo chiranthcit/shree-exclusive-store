@@ -208,9 +208,9 @@ export const aboutImage = "/17-24.png";
 
 export const gallery = [
   { label: "Storefront", image: "/18-24.png", span: true },
+  { label: "Store Highlight", image: "/store highlight.jpeg", span: true },
   { label: "Inside the Store", image: "/19-24.png", span: false },
   { label: "Our Collection", image: "/20-24.png", span: false },
-  { label: "Store Entrance", image: "/21-24.png", span: false },
 ];
 
 export const reviews = [
