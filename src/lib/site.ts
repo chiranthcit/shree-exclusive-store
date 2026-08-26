@@ -1,4 +1,14 @@
 import newbornCard from "@/assets/newborn-card.jpg";
+import mVests from "@/assets/jocket_vests_men.jpeg.asset.json";
+import mBriefs from "@/assets/jockey_briefs_men.jpeg.asset.json";
+import mTracks from "@/assets/tracks-2.jpeg.asset.json";
+import mTshirts from "@/assets/tshirts-2.jpeg.asset.json";
+import wBrasAmante from "@/assets/bras_amante.jpeg.asset.json";
+import wBrasEnamor from "@/assets/bras_enamore.jpeg.asset.json";
+import wBras4 from "@/assets/bras-4th.jpeg.asset.json";
+import wBrasNykd from "@/assets/nykd_by_nyka_womens.webp.asset.json";
+import wPanties from "@/assets/briefs_women.jpeg.asset.json";
+import wPants from "@/assets/womens_pants_-1.jpeg.asset.json";
 
 export const logoUrl = "/logo.png";
 
@@ -64,24 +74,27 @@ export const collections: Collection[] = [
     title: "Men's Section",
     heading: "Men's Section",
     subheading: "The Modern Gentleman",
-    tags: ["Briefs", "Track Pants", "T-Shirts"],
+    tags: ["Briefs", "Vests", "T-Shirts & Track Pants"],
     items: [
       {
         title: "Briefs",
         description:
-          "Everyday briefs, trunks, and vests in breathable cotton from Jockey and Van Heusen.",
+          "Everyday briefs and trunks in breathable cotton from Jockey and Van Heusen.",
+        images: [mBriefs.url],
         brands: ["Jockey", "Van Heusen"],
       },
       {
-        title: "Track Pants",
+        title: "Vests",
         description:
-          "Comfortable track pants and joggers for workouts, lounging, and everyday wear.",
-        brands: ["Jockey", "Van Heusen"],
+          "Classic cotton vests — sleeveless and sleeved styles for everyday comfort.",
+        images: [mVests.url],
+        brands: ["Jockey"],
       },
       {
-        title: "T-Shirts",
+        title: "T-Shirts & Track Pants",
         description:
-          "Cotton t-shirts for everyday wear — crew necks, polos, and essential basics.",
+          "Cotton t-shirts, polos, joggers, and track pants for everyday wear, workouts, and lounging.",
+        images: [mTshirts.url, mTracks.url],
         brands: ["Jockey", "Van Heusen"],
       },
     ],
@@ -101,49 +114,63 @@ export const collections: Collection[] = [
       "Pants",
       "Cord Sets",
       "Night Suits",
-      "Bedroom Wear T-Shirts",
+      "Bedroom Wear",
+      "T-Shirts",
     ],
     items: [
       {
         title: "Bras",
         description:
           "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes.",
-        images: ["", "", ""],
-        brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Zivame"],
+        images: [wBrasAmante.url, wBrasEnamor.url, wBrasNykd.url, wBras4.url],
+        brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Amante", "Zivame"],
       },
       {
         title: "Panties",
         description:
-          "Comfortable panties in briefs, hipsters, and boyshorts — cotton-rich and seamless options.",
+          "A wide choice of patterns, prints, and colours across every size — from everyday cotton to lace and seamless styles.",
+        images: [wPanties.url],
       },
       {
         title: "Chudidar's",
         description: "Traditional chudidar sets and bottoms for elegant ethnic wear.",
+        images: ["", ""],
       },
       {
         title: "Gowns",
         description:
-          "Elegant nightgowns, nighties, and nightwear sets for comfortable, stylish evenings.",
+          "Ethnic gowns for different purposes with many designs available.",
+        images: ["", "", "", ""],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
+        images: [wPants.url, ""],
       },
       {
         title: "Cord Sets",
         description:
           "Coordinated top-and-bottom cord sets in soft fabrics — easy, put-together everyday style.",
+        images: ["", "", "", ""],
       },
       {
         title: "Night Suits",
         description:
-          "Cosy night suit sets in breathable cotton and satin for relaxed, comfortable nights.",
+          "Different styles, designs, and colours available in nighty's.",
+        images: ["", ""],
       },
       {
-        title: "Bedroom Wear T-Shirts",
+        title: "Bedroom Wear",
         description:
-          "Relaxed-fit t-shirts made for lounging at home — soft, breathable, and easy to wear.",
+          "Relaxed bedroom wear made for lounging at home — soft, breathable, and easy to wear.",
+        images: ["", ""],
+      },
+      {
+        title: "T-Shirts",
+        description:
+          "Everyday t-shirts in soft cotton — casual fits and easy basics.",
+        images: ["", ""],
       },
     ],
   },
@@ -181,23 +208,7 @@ export const collections: Collection[] = [
     heading: "New Born Accessories",
     subheading: "The Tiniest Essentials",
     tags: ["Caps & Mittens", "Socks", "Baby Basics"],
-    items: [
-      {
-        title: "Caps & Mittens",
-        description:
-          "Soft, gentle caps and mittens to keep newborns warm and comfortable through the day.",
-      },
-      {
-        title: "Socks",
-        description:
-          "Tiny cotton socks and booties in soft, skin-friendly fabrics for delicate little feet.",
-      },
-      {
-        title: "Baby Basics",
-        description:
-          "Everyday newborn essentials — onesies, wraps, and gentle basics for the first months.",
-      },
-    ],
+    items: [],
   },
 ];
 

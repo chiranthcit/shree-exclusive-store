@@ -60,13 +60,24 @@ function CollectionPage() {
           <div className="mt-14 space-y-16">
             {collection.items.map((item, index) => {
               const shots = item.images ?? (item.image ? [item.image] : [""]);
+              const isWide = shots.length >= 4;
+              const gridCols =
+                shots.length >= 4
+                  ? "grid grid-cols-2 gap-4"
+                  : shots.length === 2
+                    ? "grid grid-cols-2 gap-3"
+                    : shots.length === 3
+                      ? "grid grid-cols-3 gap-3"
+                      : "";
               return (
               <section
                 key={item.title}
-                className="grid items-center gap-8 rounded-3xl border border-border bg-card/70 p-5 shadow-sm md:grid-cols-2 md:p-8"
+                className={`grid items-center gap-8 rounded-3xl border border-border bg-card/70 p-5 shadow-sm md:p-8 ${
+                  isWide ? "" : "md:grid-cols-2"
+                }`}
               >
-                <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                  <div className={shots.length > 1 ? "grid grid-cols-3 gap-3" : ""}>
+                <div className={!isWide && index % 2 === 1 ? "md:order-2" : ""}>
+                  <div className={gridCols}>
                     {shots.map((src, i) =>
                       src ? (
                         <img
@@ -87,6 +98,7 @@ function CollectionPage() {
                     )}
                   </div>
                 </div>
+
 
                 <div>
                   <span className="inline-block rounded-full bg-secondary px-4 py-1.5 font-display text-[0.6rem] font-semibold tracking-[0.2em] text-secondary-foreground uppercase">
