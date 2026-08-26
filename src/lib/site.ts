@@ -33,17 +33,20 @@ export const brands = [
   "Jockey",
   "Van Heusen",
   "Zivame",
+  "Clovia",
+  "Sukanya",
 ];
 
 export type CollectionItem = {
   title: string;
   description: string;
-  image: string;
-  brands: string[];
+  image?: string;
+  images?: string[];
+  brands?: string[];
 };
 
 export type Collection = {
-  slug: "men" | "women" | "kids";
+  slug: "men" | "women" | "kids" | "newborn";
   eyebrow: string;
   card: string;
   title: string;
@@ -67,21 +70,18 @@ export const collections: Collection[] = [
         title: "Briefs",
         description:
           "Everyday briefs, trunks, and vests in breathable cotton from Jockey and Van Heusen.",
-        image: "/6-24.png",
         brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "Track Pants",
         description:
           "Comfortable track pants and joggers for workouts, lounging, and everyday wear.",
-        image: "/tracks.jpeg",
         brands: ["Jockey", "Van Heusen"],
       },
       {
         title: "T-Shirts",
         description:
           "Cotton t-shirts for everyday wear — crew necks, polos, and essential basics.",
-        image: "/tshirts.jpeg",
         brands: ["Jockey", "Van Heusen"],
       },
     ],
@@ -93,41 +93,57 @@ export const collections: Collection[] = [
     title: "Women's Section",
     heading: "Women's Section",
     subheading: "The Feminine Essence",
-    tags: ["Bras", "Panties", "Chudidar's", "Gowns", "Pants"],
+    tags: [
+      "Bras",
+      "Panties",
+      "Chudidar's",
+      "Gowns",
+      "Pants",
+      "Cord Sets",
+      "Night Suits",
+      "Bedroom Wear T-Shirts",
+    ],
     items: [
       {
         title: "Bras",
         description:
-          "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes, from Enamor, Amante and Nykd by Nykaa.",
-        image: "/9-24.png",
-        brands: ["Enamor", "Amante", "Nykd by Nykaa", "Zivame"],
+          "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes.",
+        images: ["", "", ""],
+        brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Zivame"],
       },
       {
         title: "Panties",
         description:
           "Comfortable panties in briefs, hipsters, and boyshorts — cotton-rich and seamless options.",
-        image: "/10-24.png",
-        brands: ["Enamor", "Amante", "Jockey"],
       },
       {
         title: "Chudidar's",
         description: "Traditional chudidar sets and bottoms for elegant ethnic wear.",
-        image: "/11-24.png",
-        brands: ["Enamor", "Amante"],
       },
       {
         title: "Gowns",
         description:
           "Elegant nightgowns, nighties, and nightwear sets for comfortable, stylish evenings.",
-        image: "/12-24.png",
-        brands: ["Nykd by Nykaa", "Enamor"],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
-        image: "/13-24.png",
-        brands: ["Jockey", "Van Heusen", "Nykd by Nykaa"],
+      },
+      {
+        title: "Cord Sets",
+        description:
+          "Coordinated top-and-bottom cord sets in soft fabrics — easy, put-together everyday style.",
+      },
+      {
+        title: "Night Suits",
+        description:
+          "Cosy night suit sets in breathable cotton and satin for relaxed, comfortable nights.",
+      },
+      {
+        title: "Bedroom Wear T-Shirts",
+        description:
+          "Relaxed-fit t-shirts made for lounging at home — soft, breathable, and easy to wear.",
       },
     ],
   },
@@ -138,34 +154,55 @@ export const collections: Collection[] = [
     title: "Kids Section",
     heading: "Kids Section",
     subheading: "The Little Ones",
-    tags: ["Briefs", "New Born Accessories", "Casual Wear"],
+    tags: ["Briefs/Vests", "Ethnic Wear", "Casual Wear"],
     items: [
       {
-        title: "Briefs",
+        title: "Briefs/Vests",
         description:
-          "Gentle, stretchy briefs designed for a comfortable fit on growing kids.",
-        image: "/14-24.png",
-        brands: ["Jockey"],
+          "Gentle, stretchy briefs and soft cotton vests designed for a comfortable fit on growing kids.",
       },
       {
-        title: "New Born Accessories",
+        title: "Ethnic Wear",
         description:
-          "Soft, gentle clothing and essentials for newborns, plus handy accessories like socks, caps, and basics for little ones.",
-        image: "/15-24.png",
-        brands: ["Bonjour", "Jockey"],
+          "Festive ethnic outfits for little ones — kurtas, sets, and traditional wear for every occasion.",
       },
       {
         title: "Casual Wear",
         description:
-          "Comfortable, stylish casual and party wear for everyday play and outings — tees, shorts, and easy-fit basics for active little ones.",
-        image: "/16-24.png",
-        brands: ["Jockey", "Bonjour"],
+          "Comfortable, stylish casual and party wear for everyday play and outings — tees, shorts, and easy-fit basics.",
+      },
+    ],
+  },
+  {
+    slug: "newborn",
+    eyebrow: "For Newborns",
+    card: newbornCard,
+    title: "New Born Accessories",
+    heading: "New Born Accessories",
+    subheading: "The Tiniest Essentials",
+    tags: ["Caps & Mittens", "Socks", "Baby Basics"],
+    items: [
+      {
+        title: "Caps & Mittens",
+        description:
+          "Soft, gentle caps and mittens to keep newborns warm and comfortable through the day.",
+      },
+      {
+        title: "Socks",
+        description:
+          "Tiny cotton socks and booties in soft, skin-friendly fabrics for delicate little feet.",
+      },
+      {
+        title: "Baby Basics",
+        description:
+          "Everyday newborn essentials — onesies, wraps, and gentle basics for the first months.",
       },
     ],
   },
 ];
 
 export const aboutImage = "/17-24.png";
+
 
 export const gallery = [
   { label: "Storefront", image: "/18-24.png", span: true },
