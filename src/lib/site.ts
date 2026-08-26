@@ -114,49 +114,63 @@ export const collections: Collection[] = [
       "Pants",
       "Cord Sets",
       "Night Suits",
-      "Bedroom Wear T-Shirts",
+      "Bedroom Wear",
+      "T-Shirts",
     ],
     items: [
       {
         title: "Bras",
         description:
           "Bras for every occasion — padded, non-padded, sports, t-shirt, and push-up in a range of sizes.",
-        images: ["", "", ""],
-        brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Zivame"],
+        images: [wBrasAmante.url, wBrasEnamor.url, wBrasNykd.url, wBras4.url],
+        brands: ["Jockey", "Nykd by Nykaa", "Enamor", "Amante", "Zivame"],
       },
       {
         title: "Panties",
         description:
-          "Comfortable panties in briefs, hipsters, and boyshorts — cotton-rich and seamless options.",
+          "A wide choice of patterns, prints, and colours across every size — from everyday cotton to lace and seamless styles.",
+        images: [wPanties.url],
       },
       {
         title: "Chudidar's",
         description: "Traditional chudidar sets and bottoms for elegant ethnic wear.",
+        images: ["", ""],
       },
       {
         title: "Gowns",
         description:
-          "Elegant nightgowns, nighties, and nightwear sets for comfortable, stylish evenings.",
+          "Ethnic gowns for different purposes with many designs available.",
+        images: ["", "", "", ""],
       },
       {
         title: "Pants",
         description:
           "Leggings, athleisure, and lower-wear for everyday comfort and active wear.",
+        images: [wPants.url, ""],
       },
       {
         title: "Cord Sets",
         description:
           "Coordinated top-and-bottom cord sets in soft fabrics — easy, put-together everyday style.",
+        images: ["", "", "", ""],
       },
       {
         title: "Night Suits",
         description:
-          "Cosy night suit sets in breathable cotton and satin for relaxed, comfortable nights.",
+          "Different styles, designs, and colours available in nighty's.",
+        images: ["", ""],
       },
       {
-        title: "Bedroom Wear T-Shirts",
+        title: "Bedroom Wear",
         description:
-          "Relaxed-fit t-shirts made for lounging at home — soft, breathable, and easy to wear.",
+          "Relaxed bedroom wear made for lounging at home — soft, breathable, and easy to wear.",
+        images: ["", ""],
+      },
+      {
+        title: "T-Shirts",
+        description:
+          "Everyday t-shirts in soft cotton — casual fits and easy basics.",
+        images: ["", ""],
       },
     ],
   },
