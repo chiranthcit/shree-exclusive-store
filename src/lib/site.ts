@@ -105,7 +105,8 @@ export const collections: Collection[] = [
       "Cord Sets",
       "Night Suits",
       "Bedroom Wear",
-      "T-Shirts",
+      "T-Shirts"
+      "Gym wear",
     ],
     items: [
       {
@@ -164,6 +165,11 @@ export const collections: Collection[] = [
         description: "Everyday t-shirts in soft cotton — casual fits and easy basics.",
         images: ["", ""],
       },
+      {
+  title: "Gym Wear",
+  description: "Clothing for training, workout — different colors and varieties available.",
+  images: [""],
+},
     ],
   },
   {
