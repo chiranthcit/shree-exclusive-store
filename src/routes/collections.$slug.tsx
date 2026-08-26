@@ -52,10 +52,12 @@ function CollectionPage() {
           <p className="mt-3 font-display text-xs font-semibold tracking-[0.24em] text-primary uppercase">
             {collection.subheading}
           </p>
-          <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
-            Explore the sections below — each one a curated range of premium branded innerwear
-            available at our store.
-          </p>
+         {collection.items.length > 0 && (
+  <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
+    Explore the sections below — each one a curated range of premium branded innerwear
+    available at our store.
+  </p>
+)}
 
           <div className="mt-14 space-y-16">
             {collection.items.map((item, index) => {
