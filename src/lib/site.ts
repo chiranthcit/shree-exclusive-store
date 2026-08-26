@@ -105,7 +105,7 @@ export const collections: Collection[] = [
       "Cord Sets",
       "Night Suits",
       "Bedroom Wear",
-      "T-Shirts"
+      "T-Shirts",
       "Gym wear",
     ],
     items: [
