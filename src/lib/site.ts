@@ -208,23 +208,7 @@ export const collections: Collection[] = [
     heading: "New Born Accessories",
     subheading: "The Tiniest Essentials",
     tags: ["Caps & Mittens", "Socks", "Baby Basics"],
-    items: [
-      {
-        title: "Caps & Mittens",
-        description:
-          "Soft, gentle caps and mittens to keep newborns warm and comfortable through the day.",
-      },
-      {
-        title: "Socks",
-        description:
-          "Tiny cotton socks and booties in soft, skin-friendly fabrics for delicate little feet.",
-      },
-      {
-        title: "Baby Basics",
-        description:
-          "Everyday newborn essentials — onesies, wraps, and gentle basics for the first months.",
-      },
-    ],
+    items: [],
   },
 ];
 
