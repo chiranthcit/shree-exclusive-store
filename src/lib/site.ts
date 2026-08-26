@@ -1,3 +1,5 @@
+import newbornCard from "@/assets/newborn-card.jpg";
+
 export const logoUrl = "/logo.png";
 
 export const store = {
