@@ -68,13 +68,13 @@ function Home() {
               Trendy fashion, quality clothing, and exclusive styles — all under one roof.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              
+              <a
                 href="#collections"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary-foreground uppercase transition-transform hover:scale-[1.03]"
               >
                 Explore Collections <ArrowRight className="h-4 w-4" />
               </a>
-              
+              <a
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-card px-7 py-4 font-display text-xs font-semibold tracking-[0.18em] text-primary uppercase transition-colors hover:bg-accent"
               >
@@ -298,7 +298,7 @@ function Home() {
                 <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
                   {store.address}
                 </p>
-                
+                <a
                   href={store.maps}
                   target="_blank"
                   rel="noreferrer"
@@ -322,7 +322,7 @@ function Home() {
                 <span className="font-display text-[0.65rem] font-semibold tracking-[0.22em] text-muted-foreground uppercase">
                   Follow Us
                 </span>
-                
+                <a
                   href={store.instagram}
                   target="_blank"
                   rel="noreferrer"
@@ -331,7 +331,7 @@ function Home() {
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
-                
+                <a
                   href={store.whatsapp}
                   target="_blank"
                   rel="noreferrer"
@@ -348,7 +348,7 @@ function Home() {
 
       <SiteFooter home />
 
-      
+      <a
         href={store.whatsapp}
         target="_blank"
         rel="noreferrer"
