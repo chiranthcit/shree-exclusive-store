@@ -76,7 +76,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               {[
                 ["500+", "Designs"],
-                ["6+", "Brands"],
+                ["14+", "Brands"],
                 ["50,000+", "Products"],
               ].map(([n, l]) => (
                 <div key={l} className="border-l border-border pl-4 first:border-0 first:pl-0">
