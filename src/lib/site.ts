@@ -216,7 +216,7 @@ export const gallery = [
   { label: "Storefront", image: "/18-24.png" },
   { label: "Inside the Store", image: "/19-24.png" },
   { label: "Store Highlight", image: "/store highlight.jpeg" },
-  { label: "Our Collection", image: "/20-24.png" },
+  { label: "Our Collection", image: "/our collections.jpeg" },
 ];
 
 export const reviews = [
